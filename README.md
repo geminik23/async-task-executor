@@ -7,6 +7,9 @@ A lightweight Rust library for building extensible asynchronous task executors, 
 
 
 # TODO
+- [x] Trait SharedData to access the sharable data in different thread.
+- [ ] 
+
 - [ ] Implement the TaskExecutor with TaskHandler
 
 
