@@ -11,8 +11,7 @@ description = "A lightweight Rust library for building extensible asynchronous t
 
 [dependencies]
 async-std = {  veresion = "1.12" , features = ["attributes"]}
-
-
+async-trait = "0.1"
 
 
 [lib]
