@@ -1,0 +1,15 @@
+[package]
+name = "async-task-executor"
+version = "0.1.0"
+edition = "2021"
+authors = ["Jaemin Kim <geminik23@gmail.com>"]
+license = "MIT"
+readme = "README.md"
+
+
+[dependencies]
+
+
+[lib]
+name = "async_taskex"
+path = "src/lib.rs"
