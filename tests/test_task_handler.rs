@@ -1,6 +1,6 @@
 use std::sync::Arc;
 
-use async_taskex::{SharedData, TaskHandler};
+use async_taskex::{Response, SharedData, TaskHandler, TaskMessage};
 use async_trait::async_trait;
 
 #[derive(Default)]
@@ -14,10 +14,14 @@ struct TestHandler;
 impl TaskHandler<SimpleData> for TestHandler {
     async fn handle(
         &self,
-        task_json: String,
+        task_message: TaskMessage,
         _shared_data: Arc<SimpleData>,
-    ) -> Result<String, String> {
-        Ok(task_json)
+    ) -> Result<Response, String> {
+        Ok(Response {
+            success: true,
+            result: Some(task_message.payload),
+            error: None,
+        })
     }
 }
 
@@ -25,8 +29,12 @@ impl TaskHandler<SimpleData> for TestHandler {
 async fn test_handler() {
     let data = Arc::new(SimpleData {});
     let handler = TestHandler;
-    let message = "Test message".into();
+    let message = TaskMessage {
+        task_name: "test_type".into(),
+        payload: "Test message".into(),
+    };
 
-    let result = handler.handle(message, data.clone()).await.unwrap();
-    assert_eq!(result, "Test message");
+    let response = handler.handle(message, data.clone()).await.unwrap();
+    assert!(response.success);
+    assert_eq!(response.result.unwrap(), "Test message");
 }
