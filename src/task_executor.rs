@@ -66,7 +66,7 @@ impl<S: SharedData> TaskExecutor<S> {
             None => return Err("task not found".to_string()),
         };
 
-        // explicitly drop the MutexGuard
+        // explicitly drop the MutexGuard.
         drop(handlers);
 
         let shared_data = self.shared_data.clone();
