@@ -116,7 +116,7 @@ checksum = "ecc7ab41815b3c653ccd2978ec3255c81349336702dfdf62ee6f7069b12a3aae"
 
 [[package]]
 name = "async-task-executor"
-version = "0.1.1"
+version = "0.1.2"
 dependencies = [
  "async-std",
  "async-trait",
