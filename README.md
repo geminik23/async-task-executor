@@ -5,12 +5,12 @@ This project is currently in **active development** and is not yet ready for pro
 A lightweight Rust library for building extensible asynchronous task executors, designed for handling large-scale multitasking in server environments. 
 
 
-
 # TODO
 - [x] Trait SharedData to access the sharable data in different thread.
 - [x] TaskHandler : takes a message(String type) and return the result (String) - ?use DeserializeOwned?
 - [x] Implement the TaskMessage and Response
 - [x] Implement the TaskExecutor with TaskHandler
+- [ ] more generic approach using `serde::Serialize` and `serde::de::DeserializeOwned` traits
 
 
 ## Future work
