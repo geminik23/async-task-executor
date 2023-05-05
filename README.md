@@ -6,6 +6,8 @@ A lightweight Rust library for building extensible asynchronous task executors, 
 
 
 # TODO
+
+**Base Task Executor**
 - [x] Trait SharedData to access the sharable data in different thread.
 - [x] TaskHandler : takes a message(String type) and return the result (String) - ?use DeserializeOwned?
 - [x] Implement the TaskMessage and Response
